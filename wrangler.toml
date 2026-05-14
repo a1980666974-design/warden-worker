@@ -100,8 +100,8 @@ crons = ["0 3 * * *"]
 
 [[d1_databases]]
 binding = "vault1"
-database_name = "vault1"
-database_id = "${D1_DATABASE_ID}"
+database_name = "warden-db"
+database_id = "58e73c47-7c99-44f3-a37e-db26ee7170d2"
 migrations_dir = "migrations"
 
 # R2 bucket for file attachments (optional, requires credit card)
@@ -115,8 +115,8 @@ migrations_dir = "migrations"
 # KV namespace for file attachments (optional, no credit card required)
 # KV has a 25MB limit per file, but doesn't require credit card binding.
 # If R2 is not configured, KV will be used for attachments.
-[[kv_namespaces]]
-binding = "ATTACHMENTS_KV"
+# [[kv_namespaces]]
+# binding = "ATTACHMENTS_KV"
 
 [env.dev]
 name = "warden-worker-dev"
@@ -143,8 +143,8 @@ simple = { limit = 5, period = 60 }
 
 [[env.dev.d1_databases]]
 binding = "vault1"
-database_name = "vault1-dev"
-database_id = "${D1_DATABASE_ID_DEV}"
+database_name = "warden-db"
+database_id = "58e73c47-7c99-44f3-a37e-db26ee7170d2"
 migrations_dir = "migrations"
 
 # R2 bucket for file attachments in dev environment (optional, requires credit card)
@@ -153,8 +153,8 @@ migrations_dir = "migrations"
 # bucket_name = "warden-attachments-dev"
 
 # KV namespace for file attachments in dev environment (optional, no credit card required)
-[[env.dev.kv_namespaces]]
-binding = "ATTACHMENTS_KV"
+# [[env.dev.kv_namespaces]]
+# binding = "ATTACHMENTS_KV"
 
 # logs
 [env.dev.observability]
